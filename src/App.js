@@ -1,7 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { addCustomerAction } from "./store/customerReducer";
-import { removeCustomerAction } from "./store/customerReducer";
+import {
+  addCustomerAction,
+  removeCustomerAction,
+} from "./store/customerReducer";
+import { addCashAction, getCashAction } from "./store/cashReducer";
+import { fetchCustomers } from "./asyncAction/customers";
 
 function App() {
   const dispatch = useDispatch();
@@ -9,11 +13,11 @@ function App() {
   const customers = useSelector((state) => state.customers.customers);
 
   const addCash = (cash) => {
-    dispatch({ type: "ADD_CASH", payload: cash });
+    dispatch(addCashAction(cash));
   };
 
   const getCash = (cash) => {
-    dispatch({ type: "GET_CASH", payload: cash });
+    dispatch(getCashAction(cash));
   };
 
   const addCustomer = (name) => {
@@ -39,9 +43,7 @@ function App() {
           Снять co счетa
         </button>
         <button onClick={() => addCustomer(prompt())}>Добавить клиента</button>
-        <button onClick={() => addCash(Number(prompt()))}>
-          Удалить клиента
-        </button>
+        <button onClick={() => dispatch(fetchCustomers())}>Получить клиентов из базы</button>
       </div>
       {customers.length > 0 ? (
         <div>

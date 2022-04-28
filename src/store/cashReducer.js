@@ -1,5 +1,5 @@
 const defaultState = {
-  cash: 5,
+  cash: 0,
 };
 
 const ADD_CASH = "ADD_CASH";
@@ -14,4 +14,12 @@ export const cashReducer = (state = defaultState, action) => {
     default:
       return state;
   }
+};
+
+export const addCashAction = (payload) => {
+  return { type: ADD_CASH, payload };
+};
+
+export const getCashAction = (payload) => {
+  return { type: GET_CASH, payload };
 };
