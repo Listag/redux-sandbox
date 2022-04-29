@@ -43,7 +43,9 @@ function App() {
           Снять co счетa
         </button>
         <button onClick={() => addCustomer(prompt())}>Добавить клиента</button>
-        <button onClick={() => dispatch(fetchCustomers())}>Получить клиентов из базы</button>
+        <button onClick={() => dispatch(fetchCustomers())}>
+          Получить клиентов из базы
+        </button>
       </div>
       {customers.length > 0 ? (
         <div>
