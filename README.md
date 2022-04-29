@@ -8,7 +8,7 @@
 2. Разобрала на практике базовые понятия в Redux. А именно store, state, dispatch, reducer, action с применением хуков useSelector и useDispatch.
 3. Добавила combine reducers и подключила redux devtools.
 4. Поработала с массивами в состоянии redux, написала actions creators.
-5. Познакомилась с понятием middleware. Поработать с redux-thunk. Сделать асинхронный запрос на внешний API.
+5. Познакомилась с понятием middleware. Поработала с redux-thunk. Сделала асинхронный запрос на внешний API.
 
 ## Запуск проекта
 
@@ -18,7 +18,7 @@
  npm i
 ```
 
-затем сам проект
+затем запустить сам проект
 
 ```
 npm start
